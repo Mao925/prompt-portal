@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Contest KING 2025 AIプロンプト・ポータル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: #020617; /* slate-950 */
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
+            background-size: 2rem 2rem;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.5); /* slate-800/50 */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+        .card-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--glow-color) 0%, transparent 40%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .card:hover .card-glow {
+            opacity: 0.2;
+        }
+        .text-gradient-header {
+            background-image: linear-gradient(to right, #e0e7ff, #c7d2fe, #a5b4fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-300">
+
+    <div class="container mx-auto max-w-5xl px-4 py-16 sm:py-24">
+        
+        <header class="text-center mb-16 fade-in-up">
+            <h1 class="text-4xl sm:text-6xl font-bold text-gradient-header mb-4">AI Prompt Generator Suite</h1>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">新規事業のアイデア検証から計画策定まで。各フェーズに特化したプロンプトをワンクリックで生成します。</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Card 1: ペイン分析 -->
+            <a href="https://mao925.github.io/pain-analysis/" class="card rounded-2xl p-8 flex flex-col items-start gap-4 fade-in-up" style="animation-delay: 0.1s; --glow-color: rgba(96, 165, 250, 0.8);">
+                <div class="card-glow"></div>
+                <div class="p-3 rounded-lg bg-blue-500/10 border border-blue-500/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-100">ペイン分析</h2>
+                <p class="text-slate-400 flex-grow">顧客が抱える「問題」の切実さを多角的に評価し、マネタイズ可能性を分析します。</p>
+                <span class="text-blue-400 font-semibold flex items-center gap-2">ツールへ移動 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></span>
+            </a>
+
+            <!-- Card 2: ターゲット数の推定 -->
+            <a href="https://mao925.github.io/target-estimation/" class="card rounded-2xl p-8 flex flex-col items-start gap-4 fade-in-up" style="animation-delay: 0.2s; --glow-color: rgba(52, 211, 153, 0.8);">
+                <div class="card-glow"></div>
+                <div class="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-100">ターゲット数の推定</h2>
+                <p class="text-slate-400 flex-grow">公開データに基づき、ターゲットセグメントの潜在的な市場規模（人数）を論理的に推定します。</p>
+                <span class="text-emerald-400 font-semibold flex items-center gap-2">ツールへ移動 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></span>
+            </a>
+            
+            <!-- Card 3: ペルソナ定義 -->
+            <a href="https://mao925.github.io/persona-definition/" class="card rounded-2xl p-8 flex flex-col items-start gap-4 fade-in-up" style="animation-delay: 0.3s; --glow-color: rgba(192, 132, 252, 0.8);">
+                <div class="card-glow"></div>
+                <div class="p-3 rounded-lg bg-purple-500/10 border border-purple-500/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-100">ペルソナ定義</h2>
+                <p class="text-slate-400 flex-grow">ターゲット顧客の人物像を、ライフスタイルや価値観まで含めて解像度高く描き出します。</p>
+                <span class="text-purple-400 font-semibold flex items-center gap-2">ツールへ移動 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></span>
+            </a>
+
+            <!-- Card 4: ソリューションのアイデア出し -->
+            <a href="https://mao925.github.io/solution-idiation/" class="card rounded-2xl p-8 flex flex-col items-start gap-4 fade-in-up" style="animation-delay: 0.4s; --glow-color: rgba(251, 146, 60, 0.8);">
+                <div class="card-glow"></div>
+                <div class="p-3 rounded-lg bg-orange-500/10 border border-orange-500/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.375 3.375 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-100">ソリューションのアイデア出し</h2>
+                <p class="text-slate-400 flex-grow">多様な発想の切り口から、常識にとらわれない革新的なソリューションアイデアを発見します。</p>
+                <span class="text-orange-400 font-semibold flex items-center gap-2">ツールへ移動 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></span>
+            </a>
+            
+            <!-- Card 5: 事業計画策定 -->
+            <a href="https://mao925.github.io/business-plan-formulation/" class="card rounded-2xl p-8 flex flex-col items-start gap-4 fade-in-up lg:col-start-2" style="animation-delay: 0.5s; --glow-color: rgba(244, 63, 94, 0.8);">
+                <div class="card-glow"></div>
+                <div class="p-3 rounded-lg bg-rose-500/10 border border-rose-500/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-100">事業計画策定</h2>
+                <p class="text-slate-400 flex-grow">アイデアを、ビジネスモデルや成長戦略を含む、投資家を説得できるレベルの事業計画へと昇華させます。</p>
+                <span class="text-rose-400 font-semibold flex items-center gap-2">ツールへ移動 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></span>
+            </a>
+
+        </div>
+    </div>
+
+    <script>
+        // カードにホバーした際に、マウス位置に応じて光の演出を加えるスクリプト
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+
+</body>
+</html>
