@@ -58,6 +58,14 @@
 
     <main id="portal-container" class="w-full h-screen flex flex-col items-center justify-between p-4 md:p-8 relative">
         
+        <!-- Output Example Button -->
+        <a href="https://docs.google.com/document/d/1zUKqHvWDqIq1AUXH8bpMkx6qbF_L0-G4-ydEjQIxM84/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="absolute top-4 right-4 md:top-8 md:right-8 z-10 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/40 transition-colors flex items-center space-x-2" title="出力例を見る">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-white text-sm font-semibold">出力例</span>
+        </a>
+        
         <header class="w-full max-w-6xl mx-auto">
              <h1 class="text-xl md:text-2xl font-bold text-white/80">Business Contest KING 2025 AIプロンプト</h1>
         </header>
@@ -164,21 +172,23 @@
             function updateDisplay(index) {
                 const activeSite = sites[index];
 
-                // 詳細エリアを一度非表示にし、アニメーションをリセット
+                // Animate details out
                 detailsContainer.style.animation = 'none';
-                // void detailsContainer.offsetWidth; // Reflow to restart animation
                 
-                // 背景とテキストコンテンツを更新
+                // Update background and text content
                 body.style.background = activeSite.theme.bg;
                 siteTitle.textContent = activeSite.title;
                 siteDescription.textContent = activeSite.description;
                 siteScene.textContent = activeSite.scene;
                 siteLink.href = activeSite.url;
 
-                // フェードインアニメーションを再開
+                // Trigger reflow to restart animation
+                void detailsContainer.offsetWidth; 
+                
+                // Animate details in
                 detailsContainer.style.animation = 'fadeIn 1s ease-out';
                 
-                // サムネイルのアクティブ状態を更新
+                // Update active state of thumbnails
                 const thumbnails = document.querySelectorAll('.thumbnail-item');
                 thumbnails.forEach((thumb, i) => {
                     thumb.classList.toggle('active', i === index);
@@ -206,7 +216,7 @@
                 });
             }
 
-            // 初期化
+            // Initialization
             initThumbnails();
             updateDisplay(0);
         });
